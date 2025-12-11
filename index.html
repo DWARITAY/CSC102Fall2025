@@ -23,8 +23,13 @@
         <!-- this will be the menu for travelling between the webpages -->
     </nav>
     <a href="index.html">Index</a>
-    <br>
+    <a href="table.html">Table</a>
     <a href="boards.html">Boards</a>
+    <a href="Palindrome.html">Palindrome</a>
+    <a href="sound.html">Sound</a>
+    <a href="events (1).html">Events</a>
+    <a href="w4game (2).html">Game</a>
+
     <nav>
       <header>
   
@@ -44,7 +49,53 @@
         
         
       
-       <script src="code-2.js"> </script>
+       <script src="code-2.js">
+       // --------------------
+      // New Code Start
+class Mover {
+    constructor(imageId) {
+        this.img = document.getElementById(imageId);
+        this.position = 0;
+        this.interval = null;
+    }
+
+    start() {
+        // move image 5px per frame
+        this.interval = setInterval(() => {
+            this.position += 5;
+            this.img.style.marginLeft = this.position + "px";
+        }, 100);
+    }
+
+    stop() {
+        clearInterval(this.interval);
+    }
+}
+
+// --------------------
+// Create an object from the class
+// --------------------
+const imageMover = new Mover("./code meme/Screenshot 2025-09-20 at 4.06.44 PM.png");
+
+// --------------------
+// Functions for buttons
+// --------------------
+function startMove() {
+    document.getElementById("btnStart").disabled = true;
+    document.getElementById("btnStop").disabled = false;
+
+    imageMover.start();   // call object function
+}
+
+function stopMove() {
+    document.getElementById("btnStart").disabled = false;
+    document.getElementById("btnStop").disabled = true;
+
+    imageMover.stop();    // call object function
+    // New Code end
+}
+
+       </script>
    
 
     <!-- the footer section is where we put legal info, maybe a sitemap -->
